@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_id'])) {
                 </ul>
                 <div class="navbar-nav">
                     <span class="nav-link">
-                        <i class="bi bi-person-circle"></i> Welcome, <?php echo htmlspecialchars($_SESSION['user_name']); ?>
+                        <i class="bi bi-person-circle"></i> Welcome, <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'User'); ?>
                     </span>
                     <a class="nav-link" href="auth/logout.php"><i class="bi bi-box-arrow-right"></i> Logout</a>
                 </div>
@@ -51,7 +51,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="container text-center">
             <h1 class="display-4 mb-4">Manage Your Finances Smartly</h1>
             <p class="lead mb-4">Track your expenses, analyze your spending patterns, and achieve your financial goals.</p>
-            <a href="dashboard.php" class="btn btn-light btn-lg">Get Started <i class="bi bi-arrow-right"></i></a>
+            <a href="transactions.php" class="btn btn-light btn-lg">Get Started <i class="bi bi-arrow-right"></i></a>
         </div>
     </section>
 
@@ -95,62 +95,39 @@ if (!isset($_SESSION['user_id'])) {
     
     <footer class="footer">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-section">
-                        <h5 class="footer-title"><i class="bi bi-wallet2"></i> Monetra</h5>
-                        <p class="footer-description">
-                            Your trusted partner in personal finance management. Track, analyze, and improve your financial health with Monetra.
-                        </p>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
-                        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="footer-title"><i class="bi bi-wallet2"></i> Monetra</h5>
+                    <p>Your trusted partner in personal finance management.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="footer-section">
-                        <h5 class="footer-title">Quick Links</h5>
-                        <ul class="footer-links">
-                            <li><a href="dashboard.php">Dashboard</a></li>
-                            <li><a href="transactions.php">Transactions</a></li>
-                            <li><a href="#">Reports</a></li>
-                            <li><a href="#">Settings</a></li>
-                        </ul>
-                    </div>
+                <div class="col-md-3">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li><a href="transactions.php">Transactions</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-section">
-                        <h5 class="footer-title">Resources</h5>
-                        <ul class="footer-links">
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-section">
-                        <h5 class="footer-title">Contact Us</h5>
-                        <ul class="footer-contact">
-                            <li><i class="bi bi-envelope"></i> conact@monetra.com</li>
-                            <li><i class="bi bi-telephone"></i> +212 633895448</li>
-                            <li><i class="bi bi-geo-alt"></i> 123 Finance Street, Tangier 90000</li>
-                        </ul>
-                    </div>
+                <div class="col-md-3">
+                    <h5 class="footer-title">Contact</h5>
+                    <ul class="footer-contact">
+                        <li><i class="bi bi-envelope"></i> contact@monetra.com</li>
+                        <li><i class="bi bi-telephone"></i> +212 633895448</li>
+                    </ul>
                 </div>
             </div>
             <hr class="footer-divider">
-            <div class="footer-bottom">
-                <p class="copyright">&copy; <?php echo date('Y'); ?> Monetra. All rights reserved.</p>
+            <div class="text-center">
+                <p>&copy; <?php echo date('Y'); ?> Monetra. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
